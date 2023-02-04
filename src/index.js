@@ -22,7 +22,8 @@ async function run() {
     const addingIssue = new Issue();
 
     if(issueNo != 0 && issueId == '') {
-        issueId = await addingIssue.getIssueId(org, repositoryName, myToken, issueNo)
+        let issueDetail = await addingIssue.getIssueId(org, repositoryName, myToken, issueNo)
+        console.log("ISSUE DETAIL: ", issueDetail)
     }
     
     
