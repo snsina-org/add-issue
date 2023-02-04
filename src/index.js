@@ -22,7 +22,7 @@ async function run() {
     const addingIssue = new Issue();
 
     if(issueNo != 0 && issueId == '') {
-        issueId = await addingIssue.getIssueId(org, repo, myToken, issueNo)
+        issueId = await addingIssue.getIssueId(org, repositoryName, myToken, issueNo)
     }
     
     
