@@ -13,15 +13,16 @@ module.exports = class IssueLib {
     }
 
     async getIssueId(org, repo, myToken, issue_number) {
+        let repoArray = repo.split('/')
 
-        console.log("ISSUE NUMBER: ", issue_number, repo, org)
+        console.log("ISSUE NUMBER: ", issue_number, repoArray[1], org)
         const octokit = new Octokit({
             auth: myToken
         })
         
         return await octokit.request('GET /repos/{owner}/{repo}/issues/{issue_number}', {
             owner: `${org}`,
-            repo: `${repo}`,
+            repo: `${repoArray[1]}`,
             issue_number: `${issue_number}`
           });
     }
