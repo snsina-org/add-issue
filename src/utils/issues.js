@@ -14,6 +14,7 @@ module.exports = class IssueLib {
 
     async getIssueId(org, repo, myToken, issue_number) {
 
+        console.log("ISSUE NUMBER: ", issue_number)
         const octokit = new Octokit({
             auth: myToken
         })
