@@ -3,12 +3,27 @@
 
 const _ = require('lodash');
 const { graphql } = require("@octokit/graphql");
+const { Octokit } = require("@octokit/rest");
 
 
 module.exports = class IssueLib {
 
     constructor() {
 
+    }
+
+    async getIssueId(org, repo, myToken, issue_number) {
+
+        
+        let ops = {
+            auth: myToken
+        }
+        this.octokit = new Octokit(ops);
+        return await octokit.request('GET /repos/{owner}/{repo}/issues/{issue_number}', {
+            owner: org,
+            repo: repo,
+            issue_number: issue_number
+          });
     }
  
 

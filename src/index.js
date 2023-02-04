@@ -12,6 +12,7 @@ async function run() {
     const pid = parseInt(core.getInput('pid'));
     const issueId = core.getInput('issue-id');
     const repositoryName = core.getInput('repo');
+    const issueNo = parseInt(core.getInput('issue-number'));
     
 
 
@@ -20,7 +21,9 @@ async function run() {
     const p2p2 = new Projects();    
     const addingIssue = new Issue();
 
-
+    if(issueNo != 0 && issueId == '') {
+        issueId = await addingIssue.getIssueId(org, repo, myToken, issueNo)
+    }
     
     
     await p2p2.getProjId(org,myToken,pid).then(data => {
