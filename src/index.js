@@ -23,7 +23,7 @@ async function run() {
 
     
     
-    let { orgProj } = await p2p2.getProjId(org,myToken,pid)
+    let { orgProj } = await p2p2.getProjId(org,myToken,2)
     
     console.log(orgProj)
 
