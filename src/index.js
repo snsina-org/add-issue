@@ -23,11 +23,13 @@ async function run() {
 
     
     
-    let { orgProj } = await p2p2.getProjId(org,myToken,2)
-    
-    console.log(orgProj)
+    let { orgProj } = await p2p2.getProjId(org,myToken,pid).then(data => {
+        console.log(data)
 
-    await addingIssue.addIssue(myToken, 'PVT_kwDOA9vVw84ABIOm', issueId)
+         addingIssue.addIssue(myToken, 'PVT_kwDOA9vVw84ABIOm', issueId)
+    })
+    
+    
 
     // fs.appendFileSync(process.env.GITHUB_OUTPUT, "version=" + newVersion);
     // const octokit = github.getOctokit(myToken);
