@@ -18,7 +18,7 @@ module.exports = class IssueLib {
         let ops = {
             auth: myToken
         }
-        this.octokit = new Octokit(ops);
+        let octokit = new Octokit(ops);
         return await octokit.request('GET /repos/{owner}/{repo}/issues/{issue_number}', {
             owner: org,
             repo: repo,
