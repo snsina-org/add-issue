@@ -9,7 +9,7 @@ async function run() {
     // Inputs
     const myToken = core.getInput('token');
     const org = core.getInput('org');
-    const pid = pasrseInt(core.getInput('pid'));
+    const pid = parseInt(core.getInput('pid'));
     const issueId = core.getInput('issue-id');
     const repositoryName = core.getInput('repo');
     
