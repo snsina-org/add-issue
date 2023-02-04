@@ -14,11 +14,10 @@ module.exports = class IssueLib {
 
     async getIssueId(org, repo, myToken, issue_number) {
 
-        
-        let ops = {
+        const octokit = new Octokit({
             auth: myToken
-        }
-        let octokit = new Octokit(ops);
+        })
+        
         return await octokit.request('GET /repos/{owner}/{repo}/issues/{issue_number}', {
             owner: org,
             repo: repo,
