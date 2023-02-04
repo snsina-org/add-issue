@@ -5,7 +5,7 @@ const _ = require('lodash');
 const { graphql } = require("@octokit/graphql");
 
 
-module.exports = class Projectss {
+module.exports = class Projects {
 
     constructor() {
 
@@ -18,7 +18,7 @@ module.exports = class Projectss {
             },
         });
  
-        let data =  await graphqlWithAuth(
+        return await graphqlWithAuth(
             `
             {
                 organization(login: "${org}"){
@@ -29,7 +29,6 @@ module.exports = class Projectss {
               }
             `
         );   
-        console.log("Data: ", data)
-        return data    
+          
     }
 }
