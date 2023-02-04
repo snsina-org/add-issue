@@ -27,6 +27,8 @@ async function run() {
     
     console.log(orgProj)
 
+    await addingIssue.addIssue(myToken, 'PVT_kwDOA9vVw84ABIOm', issueId)
+
     // fs.appendFileSync(process.env.GITHUB_OUTPUT, "version=" + newVersion);
     // const octokit = github.getOctokit(myToken);
 }
