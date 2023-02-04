@@ -23,7 +23,7 @@ async function run() {
 
     
     
-    const { orgProj } = await project.getProjId(org, (owner, repo, myToken);
+    const { orgProj } = await project.getProjId(org, myToken, pid);
     
     console.log(orgProj)
 
