@@ -23,7 +23,7 @@ async function run() {
 
     
     
-    let { orgProj } = await p2p2.getProjId(org,myToken,pid).then(data => {
+    await p2p2.getProjId(org,myToken,pid).then(data => {
         console.log(data)
 
          addingIssue.addIssue(myToken, 'PVT_kwDOA9vVw84ABIOm', issueId)
