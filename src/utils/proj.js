@@ -23,7 +23,23 @@ module.exports = class Projectss {
             {
                 organization(login: "${org}"){
                   projectV2(number: ${pid}) {
-                    node_id
+                    id,
+                    fields(first:20) {
+                        nodes {
+                          ... on ProjectV2Field {
+                            id
+                            name
+                          }
+                          ... on ProjectV2SingleSelectField {
+                            id
+                            name
+                            options {
+                              id
+                              name
+                            }
+                          }
+                        }
+                      }
                   }
                 }
               }
