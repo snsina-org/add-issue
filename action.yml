@@ -9,7 +9,7 @@ inputs:
     default: ${{ github.token }}  
   org:
     required: false
-    default: $ {{ github.repository_owner	 }}
+    default: ${{ github.repository_owner }}
   issue-id:
     required: false
     default: ''
