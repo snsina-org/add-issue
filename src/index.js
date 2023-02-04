@@ -17,13 +17,13 @@ async function run() {
 
 
     // class initializations
-    const project = new Projects();    
+    const p2p2 = new Projects();    
     const addingIssue = new Issue();
 
 
     
     
-    const { orgProj } = await project.getProjId(org, myToken, pid);
+    let { orgProj } = await p2p2.getProjId(org,myToken,pid)
     
     console.log(orgProj)
 
