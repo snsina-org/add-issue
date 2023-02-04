@@ -23,7 +23,7 @@ module.exports = class Projectss {
             {
                 organization(login: "${org}"){
                   projectV2(number: ${pid}) {
-                    node_id
+                    id
                   }
                 }
               }
