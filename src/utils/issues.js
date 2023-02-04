@@ -22,7 +22,7 @@ module.exports = class IssueLib {
         return await graphqlWithAuth(
             `
             mutation {
-                addProjectV2ItemById(input: {projectId: "${p_node_id}" contentId: "${issue_node_id}"}) {
+                addProjectV2ItemById(input: {projectId: "PVT_kwDOA9vVw84ABIOm" contentId: "${issue_node_id}"}) {
                   item {
                     id
                   }
